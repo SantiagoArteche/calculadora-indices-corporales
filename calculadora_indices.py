@@ -1,12 +1,12 @@
 def calcular_IMC(peso, altura):
-    if not validar_info(peso, altura, False, False, False):
+    if not validar_info(peso, altura, None, None, None):
         return False
 
     masa_corporal = peso / (altura ** 2) 
     return masa_corporal
     
 def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
-    if not validar_info("calcular_porcentaje_grasa"):
+    if not validar_info(peso, altura, edad, valor_genero, None):
         return
     
     imc = calcular_IMC(peso, altura)
@@ -71,20 +71,20 @@ def conseguir_valor_genero(input_valor_genero, tipo_calculo):
         
 
 def validar_info(peso, altura, edad, valor_genero, valor_actividad):
-    if not isinstance(peso, float) or peso <= 0:
+    if peso <= 0:
         print("El peso debe ser un número mayor a 0")
         return False
-    elif not isinstance(altura, float) or altura <= 0:
+    elif altura <= 0:
         print("La altura debe ser un número mayor a 0")
         return False
-    elif edad and (not isinstance(edad, int) or edad <= 0):
+    elif (edad and edad < 0) or edad == 0:
         print("La edad debe ser un número mayor a 0")
         return False
-    elif valor_genero and (not isinstance(valor_genero, int) or ((valor_genero <= 0) or (valor_genero > 2))):
-        print("Debe ingresar 1 en caso de que seas HOMBRE o 2 en caso de que seas MUJER")
+    elif (valor_genero and ((valor_genero < 0) or (valor_genero > 2))) or valor_genero == 0:
+        print("Debe ingresar 1 en caso de que sea HOMBRE o 2 en caso de que sea MUJER")
         return False
-    elif valor_actividad and (not isinstance(valor_actividad, int) or ((valor_actividad <= 0) or (valor_actividad > 5))):
-        print("Ingreso incorrecto, elige entre las actividades disponibles ingresando un valor numererico del 1 al 5")
+    elif (valor_actividad and ((valor_actividad < 0) or (valor_actividad > 5))) or valor_actividad == 0:
+        print("Ingreso incorrecto, elige entre las actividades disponibles ingresando un valor numerico del 1 al 5")
         return False
     
     return True

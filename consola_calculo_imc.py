@@ -28,7 +28,8 @@ try:
     if imc:
         categoria = categoria_imc(imc)
         print(f"Tu indice de masa corporal es de: {imc}. Tu categoría es: {categoria}")
-except ValueError:
+except ValueError as error:
+    print(error)
     print("Tanto el peso como la altura deben ser numeros.")
 
 
