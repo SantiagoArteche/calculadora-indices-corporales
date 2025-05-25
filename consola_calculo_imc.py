@@ -30,6 +30,6 @@ try:
         print(f"Tu indice de masa corporal es de: {imc}. Tu categoría es: {categoria}")
 except ValueError as error:
     print(error)
-    print("Tanto el peso como la altura deben ser numeros.")
+    print("El tipo de información que estas ingresando es incorrecto, asegurate de rellenar los valores con números.")
 
 

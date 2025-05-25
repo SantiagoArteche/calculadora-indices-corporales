@@ -30,6 +30,9 @@ def calcular_calorias_en_actividad(peso, altura, edad, valor_genero, valor_activ
     return tasa_metabolica_basal * valor_actividad_conseguido
 
 def consumo_calorias_recomendado_para_adelgazar(peso, altura, edad, valor_genero):
+    if not validar_info(peso, altura, edad, valor_genero, None):
+        return
+    
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
     rango_inferior = tasa_metabolica_basal * 0.80
     rango_superior = tasa_metabolica_basal * 0.85

@@ -1,14 +1,14 @@
-from calculadora_indices import calcular_porcentaje_grasa
+from calculadora_indices import consumo_calorias_recomendado_para_adelgazar
 
 try:
     peso = float(input("Ingresa tu peso (En KGs): "))
-    altura = float(input("Ingresa tu altura (En metros): "))
+    altura = float(input("Ingresa tu altura (En centímetros): "))
     edad = int(input("Ingresa tu edad: "))
     genero = int(input("Seleccioná tu género: 1 para masculino, 2 para femenino: "))
-    porcentaje_grasa = calcular_porcentaje_grasa(peso, altura, edad, genero)
+    calorias_para_adelgazar = consumo_calorias_recomendado_para_adelgazar(peso, altura, edad, genero)
     
-    if porcentaje_grasa:
-        print(f"Tu porcentaje de grasa corporal es de: {porcentaje_grasa}%")
+    if calorias_para_adelgazar:
+        print(calorias_para_adelgazar)
 except ValueError as error:
     print(error)
     print("El tipo de información que estas ingresando es incorrecto, asegurate de rellenar los valores con números.")

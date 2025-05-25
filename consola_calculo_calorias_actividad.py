@@ -17,4 +17,4 @@ try:
         print(f"La cantidad de calorías que quemas por día con tu frecuencia de actividad es de: {calculo_calorias_en_actividad} calorías")
 except ValueError as error:
     print(error)
-    print("Error en el ingreso de información.")
+    print("El tipo de información que estas ingresando es incorrecto, asegurate de rellenar los valores con números.")

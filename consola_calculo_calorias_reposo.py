@@ -11,4 +11,4 @@ try:
         print(f"En reposo quemas un total de: {calculo_calorias_en_reposo} calorías")
 except ValueError as error:
     print(error)
-    print("Error en el ingreso de información.")
+    print("El tipo de información que estas ingresando es incorrecto, asegurate de rellenar los valores con números.")
