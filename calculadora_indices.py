@@ -2,8 +2,8 @@ def calcular_IMC(peso, altura):
     if not validar_info(peso, altura, None, None, None):
         return False
 
-    masa_corporal = peso / (altura ** 2) 
-    return round(masa_corporal, 2)
+    indice_masa_corporal = peso / (altura ** 2) 
+    return round(indice_masa_corporal, 2)
     
 def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
