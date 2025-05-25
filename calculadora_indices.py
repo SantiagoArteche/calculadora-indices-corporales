@@ -16,13 +16,13 @@ def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
     return grasa_corporal
 
 def calcular_calorias_en_reposo(peso, altura, edad, valor_genero):
-    if not validar_info("calcular_calorias_en_reposo"):
+    if not validar_info(peso, altura, edad, valor_genero, None):
         return
     
     return conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
 
 def calcular_calorias_en_actividad(peso, altura, edad, valor_genero, valor_actividad):
-    if not validar_info("calcular_calorias_en_reposo"):
+    if not validar_info(peso, altura, edad, valor_genero, valor_actividad):
         return
     
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
