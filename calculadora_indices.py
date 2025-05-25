@@ -55,7 +55,7 @@ def conseguir_valor_actividad(valor_actividad):
     elif valor_actividad == 3:
         return 1.55
     elif valor_actividad == 4:
-        return 1.72
+        return 1.725
     else:
         return 1.9
     
