@@ -29,7 +29,9 @@ El **IMC** estima si el peso de una persona es adecuado en relación con su altu
 
 **Fórmula:**
 
+```
 IMC = peso (kg) / altura² (m²)
+```
 
 **Clasificación según IMC:**
 
@@ -53,7 +55,9 @@ Este porcentaje estima si el nivel de grasa en el cuerpo es adecuado.
 
 **Fórmula:**
 
+```
 %GC = 1.2 _ IMC + 0.23 _ edad (años) - 5.4 - valor_género
+```
 
 **valor_género:**
 
@@ -76,9 +80,9 @@ Este porcentaje estima si el nivel de grasa en el cuerpo es adecuado.
 La **TMB** indica la cantidad mínima de calorías necesarias para mantener las funciones vitales del cuerpo en reposo.
 
 **Fórmula:**
-
+```
 TMB = (10 _ peso) + (6.25 _ altura en cm) - (5 \* edad) + valor_género
-
+```
 **valor_género:**
 
 - Masculino: 5
@@ -100,19 +104,21 @@ Se calcula multiplicando la TMB por un valor según el nivel de actividad físic
 
 **Fórmula:**
 
+```
 TMB_ajustada = TMB \* valor_actividad
+```
 
 ---
 
 ### 🥗 Calorías Diarias para Adelgazar
 
-Para bajar de peso, se recomienda consumir entre un **15% y 20% menos** de las calorías indicadas por la TMB ajustada.
+Para bajar de peso, se recomienda consumir entre un **15% y 20% menos** de las calorías indicadas por la TMB.
 
 **Fórmulas:**
+```
+Calorías mínimas = TMB * 0.80
 
-Calorías mínimas = TMB*ajustada * 0.80
-
-Calorías máximas = TMB*ajustada * 0.85
-
+Calorías máximas = TMB * 0.85
+```
 ##
 > ⚠️ **Aviso**: Esta aplicación tiene fines educativos. Para una evaluación profesional, consulta con un especialista en salud o nutrición.
