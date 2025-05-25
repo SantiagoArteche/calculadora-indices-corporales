@@ -3,7 +3,7 @@ def calcular_IMC(peso, altura):
         return False
 
     masa_corporal = peso / (altura ** 2) 
-    return masa_corporal
+    return round(masa_corporal, 2)
     
 def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
@@ -13,13 +13,14 @@ def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
     valor_genero_conseguido = conseguir_valor_genero(valor_genero, "calcular_porcentaje_grasa")
 
     grasa_corporal = 1.2 * imc + 0.23 * edad - 5.4 - valor_genero_conseguido
-    return grasa_corporal
+    return round(grasa_corporal, 2)
 
 def calcular_calorias_en_reposo(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
         return
     
-    return conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
+    tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
+    return round(tasa_metabolica_basal, 2)
 
 def calcular_calorias_en_actividad(peso, altura, edad, valor_genero, valor_actividad):
     if not validar_info(peso, altura, edad, valor_genero, valor_actividad):
@@ -27,15 +28,15 @@ def calcular_calorias_en_actividad(peso, altura, edad, valor_genero, valor_activ
     
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
     valor_actividad_conseguido = conseguir_valor_actividad(valor_actividad)
-    return tasa_metabolica_basal * valor_actividad_conseguido
+    return round(tasa_metabolica_basal * valor_actividad_conseguido, 2)
 
 def consumo_calorias_recomendado_para_adelgazar(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
         return
     
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
-    rango_inferior = tasa_metabolica_basal * 0.80
-    rango_superior = tasa_metabolica_basal * 0.85
+    rango_inferior = round(tasa_metabolica_basal * 0.80, 2)
+    rango_superior = round(tasa_metabolica_basal * 0.85, 2)
 
     respuesta = f"Para adelgazar es recomendado que consumas entre: {rango_inferior} y {rango_superior} calorías al día"
     return respuesta

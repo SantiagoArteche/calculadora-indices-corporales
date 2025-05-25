@@ -2,23 +2,23 @@ from calculadora_indices import calcular_IMC
 
 def categoria_imc(imc):
     if imc < 16:
-        return "delgadez severa"
+        return "Delgadez Severa"
     elif imc < 17:
-        return "delgadez moderada"
+        return "Delgadez Moderada"
     elif imc < 18.5:
-        return "delgadez aceptable"
+        return "Delgadez Aceptable"
     elif imc < 25:
-        return "peso normal"
+        return "Peso Normal"
     elif imc < 30:
-        return "sobrepeso"
+        return "Sobrepeso"
     elif imc < 35:
-        return "obesidad tipo 1"
+        return "Obesidad Tipo 1"
     elif imc < 40:
-        return "obesidad tipo 2"
+        return "Obesidad Tipo 2"
     elif imc < 50:
-        return "obesidad tipo 3 o mórbida"
+        return "Obesidad Tipo 3 o Mórbida"
     else:
-        return "obesidad tipo 4 o extrema"
+        return "Obesidad Tipo 4 o Extrema"
 
 try:
     peso = float(input("Ingresa tu peso (En KGs): "))
@@ -27,7 +27,7 @@ try:
     
     if imc:
         categoria = categoria_imc(imc)
-        print(f"Tu indice de masa corporal es de: {imc}. Tu categoría es: {categoria}")
+        print(f"Tu índice de masa corporal es de: {imc}\nTu categoría es: {categoria}")
 except ValueError as error:
     print(error)
     print("El tipo de información que estas ingresando es incorrecto, asegurate de rellenar los valores con números.")
