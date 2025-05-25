@@ -56,7 +56,7 @@ Este porcentaje estima si el nivel de grasa en el cuerpo es adecuado.
 **Fórmula:**
 
 ```
-%GC = 1.2 _ IMC + 0.23 _ edad (años) - 5.4 - valor_género
+%GC = 1.2 * IMC + 0.23 * edad (años) - 5.4 - valor_género
 ```
 
 **valor_género:**
@@ -81,7 +81,7 @@ La **TMB** indica la cantidad mínima de calorías necesarias para mantener las 
 
 **Fórmula:**
 ```
-TMB = (10 _ peso) + (6.25 _ altura en cm) - (5 \* edad) + valor_género
+TMB = (10 * peso) + (6.25 * altura en cm) - (5 * edad en años) + valor_género
 ```
 **valor_género:**
 
@@ -105,7 +105,7 @@ Se calcula multiplicando la TMB por un valor según el nivel de actividad físic
 **Fórmula:**
 
 ```
-TMB_ajustada = TMB \* valor_actividad
+TMB_ajustada = TMB * valor_actividad
 ```
 
 ---
