@@ -16,8 +16,8 @@ valor_mujer_0 = 2
 hombre_PG, mujer_PG = calculadora_indices.calcular_porcentaje_grasa(81, 1.75, 20, valor_hombre_10_8), calculadora_indices.calcular_porcentaje_grasa(58, 1.69, 21, valor_mujer_0)
 
 print("Cálculos porcentaje grasa")
-print(hombre_PG)
-print(mujer_PG)
+print(f"{hombre_PG}%")
+print(f"{mujer_PG}%")
 
 print("")
 
@@ -26,8 +26,8 @@ valor_mujer_menos_161 = 2
 hombre_CR, mujer_CR = calculadora_indices.calcular_calorias_en_reposo(81, 175, 20, valor_hombre_5), calculadora_indices.calcular_calorias_en_reposo(58, 169, 21, valor_mujer_menos_161)
 
 print("Cálculos calorias en reposo")
-print(hombre_CR)
-print(mujer_CR)
+print(f"{hombre_CR} cal")
+print(f"{mujer_CR} cal")
 
 print("")
 
@@ -40,8 +40,8 @@ hombre_CA= calculadora_indices.calcular_calorias_en_actividad(81, 175, 20, valor
 mujer_CA = calculadora_indices.calcular_calorias_en_actividad(58, 169, 21, valor_mujer_menos_161, valor_deportista_1_725)
 
 print("Cálculos calorias en actividad")
-print(hombre_CA)
-print(mujer_CA)
+print(f"{hombre_CA} cal")
+print(f"{mujer_CA} cal")
 
 print("")
 
