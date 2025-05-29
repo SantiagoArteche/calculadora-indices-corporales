@@ -7,7 +7,7 @@ def calcular_IMC(peso, altura):
     
 def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
-        return
+        return False
     
     imc = calcular_IMC(peso, altura)
     valor_genero_conseguido = conseguir_valor_genero(valor_genero, "calcular_porcentaje_grasa")
@@ -17,14 +17,14 @@ def calcular_porcentaje_grasa(peso, altura, edad, valor_genero):
 
 def calcular_calorias_en_reposo(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
-        return
+        return False
     
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
     return round(tasa_metabolica_basal, 2)
 
 def calcular_calorias_en_actividad(peso, altura, edad, valor_genero, valor_actividad):
     if not validar_info(peso, altura, edad, valor_genero, valor_actividad):
-        return
+        return False
     
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
     valor_actividad_conseguido = conseguir_valor_actividad(valor_actividad)
@@ -32,7 +32,7 @@ def calcular_calorias_en_actividad(peso, altura, edad, valor_genero, valor_activ
 
 def consumo_calorias_recomendado_para_adelgazar(peso, altura, edad, valor_genero):
     if not validar_info(peso, altura, edad, valor_genero, None):
-        return
+        return False
     
     tasa_metabolica_basal = conseguir_tasa_metabolica_basal(peso, altura, edad, valor_genero)
     rango_inferior = round(tasa_metabolica_basal * 0.80, 2)
@@ -85,7 +85,7 @@ def validar_info(peso, altura, edad, valor_genero, valor_actividad):
         print("La edad debe ser un número mayor a 0")
         return False
     elif (valor_genero and ((valor_genero < 0) or (valor_genero > 2))) or valor_genero == 0:
-        print("Debe ingresar 1 en caso de que sea HOMBRE o 2 en caso de que sea MUJER")
+        print("Ingreso incorrecto, elija su género correctamente. 1 Si usted es hombre o 2 si es mujer")
         return False
     elif (valor_actividad and ((valor_actividad < 0) or (valor_actividad > 5))) or valor_actividad == 0:
         print("Ingreso incorrecto, elige entre las actividades disponibles ingresando un valor numerico del 1 al 5")
